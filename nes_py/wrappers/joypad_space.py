@@ -71,9 +71,7 @@ class JoypadSpace(Wrapper):
 
         """
         # take the step and record the output
-        if not isinstance(action, int):    # np.array
-            action = action.item()
-        return self.env.step(self._action_map[action])
+        return self.env.step(self._action_map[int(action)])    # np.array
 
     def get_keys_to_action(self):
         """Return the dictionary of keyboard keys to actions."""
